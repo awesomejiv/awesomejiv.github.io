@@ -1,0 +1,47 @@
+#page-title {
+    text-align: center;
+}
+/* picture_practice */
+#picture-container {
+    /* border: 1px solid black; */
+    width: 400px;
+    /* height: 400px; */
+    margin: 0 auto;
+}
+
+#image {
+    width: 100%;
+    border: 2px solid fuchsia;
+    border-radius: 5px;
+}
+
+/* picture_practice_2 */
+#picture-css {
+    width: 500px;
+    height: 500px;
+    background-image: url(../images/img2.png);
+}
+
+/* hovers */
+#hovers {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+#hovers:hover {
+    background-image: url(../images/img1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid rgb(148, 9, 148);
+    /* color: white; */
+}
+
+#title-h2 {
+    color: transparent;
+    text-align: center;
+}
+
+#hovers:hover h2#title-h2 {
+    color: white;
+}

@@ -1,0 +1,305 @@
+<html>
+<!-- Adds a border to the table, collapse is to merge the borders, padding is for space inside boxes -->
+<!-- Border spacing is the space between the border and boxes -->
+<head>
+<!-- Changes the tab name -->
+<title>My webpage</title>
+
+<script>
+	function myFirstFunction(){
+		document.getElementById("test").innerHTML = "Hello Udemy KYA~~";
+		}
+</script>
+
+<!-- Changes the styles of objects under certain tags -->
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px;
+}
+
+<!--table {
+	border-spacing: 20px;
+} -->
+</style>
+</head>
+
+<!-- This is to change the background color -->
+<body style="background-color:powderblue;">
+
+<!-- This are headings -->
+<h1>Hello Udemy</h1>
+<h2>Hello Udemy</h2>
+<h3>Hello Udemy</h3>
+<h4>Hello Udemy</h4>
+<h5>Hello Udemy</h5>
+<h6>Hello Udemy</h6>
+
+<!-- This is a paragraph -->
+<p id="test"> Hello my name is Jivvan </p>
+<button type="button" onclick="myFirstFunction()">Press me</button>
+<!-- This is for preformatted text, will exactly as typed, even the spacing and enters -->
+<pre>
+Hello my name is Jivvan
+I am 25
+I am from Malaysia
+</pre>
+
+<!-- This is for text with links -->
+<a href="https://www.facebook.com/jivvanraj"> This is a link </a>
+
+<!-- This is to add title, when mouseover will appear text -->
+<p title="Hey look at me!">Hey Udemy</p>
+
+<!-- This is to change text color -->
+<p style="color:red;">Hello Udemy</p>
+<p style="color:blue;">Hello Udemy</p>
+<p style="color:yellow;">Hello Udemy</p>
+
+<!-- This is to change font -->
+<p style="font-family:verdana;">Hello this is a paragraph</p>
+<p>Hello this is a second paragraph</p>
+
+<!-- This is to change the font size -->
+<p style="font-size:200%;">Hey this is a big text</p>
+
+<!-- This is for italic, bold, strong and emphasize. Italic = emphasize, bold = strong -->
+<pre>
+<i>This is italic</i>
+<b>This is bold</b>
+<strong>This is strong text</strong>
+<em>This is emphasized</em>
+<p style="color:green;font-family:verdana;font-size:150%;"><i><b>Testing 123</b></i></p>
+</pre>
+
+<!-- This is for big and small, makes a text big or small -->
+<h1>This <big>text</big> is big, and this <small>text</small> is small </h1>
+
+<!-- This is for superscript and subscript, puts a word either above or below the line -->
+<h1>This <sub>text</sub> is below, and this <sup>text</sup> is above</h1>
+
+<!-- This is for underline, puts an underline -->
+<p> <ins>Hello this line has underline</ins> </p>
+
+<!-- This is for deleting, adds a line through the word -->
+<p> Hi my name is <del>awesomejiv</del> Jivvanraj </p>
+
+<!-- This is for marking, highlights the word -->
+<p> This word right <mark>HERE</mark> is marked </p>
+
+<!-- This is for quote, puts quotation marks -->
+<q> This is a random quote </q>	
+
+<!-- This is for address, has special font -->
+<address> Jivvan <br> Beverly Hills <br> Phone number: 0172511445 </address> 
+
+<!-- This is for citation, has special font -->
+<h3> Life is Good </h3>
+<cite> Jivvan </cite>
+
+<!-- This is rgb background color, applies to the whole line not the whole page -->
+<h1 style="Background-color:rgb(0,0,0);color:rgb(255,255,255);"> Hello </h1>
+
+<!-- This is webpage link -->
+<p>This is link to <a href="http://www.Udemy.com"; style="color:red;"><mark style="color:white;background-color:black;">Udemy</mark></a></p>
+
+<!-- This is for link colors -->
+<style>
+a:visited{
+	color:red;
+	}
+a:hover {
+	color:yellow;
+	}
+</style>
+<a href="http://www.Udemy.com">Udemy</a>
+
+<!-- Open a link in a new tab -->
+<p>New tab: <a href="http://www.Udemy.com"; target="_blank">Udemy</a></p>
+
+<!-- Putting in image, alt is for the text come out first if slow connection -->
+<img src="LK.png" alt="LUNA KINDRED" title="LUNA KINDRED (Same folder)" style="width:150px;height:150px;">
+
+<!-- Image from seperate folder -->
+<img src="ImgFromSeperateFolder/SR.png" alt="SAKURA RONDO" title="SAKURA RONDO (Seperate folder)" style="width:150px;height:150px;">
+
+<!-- Image from another website -->
+<img src="https://goo.gl/4v7PiH" alt="CELESTIAL HYMN" title="CELESTIAL HYMN (From website)" style="width:150px;height:150px">
+
+<!-- GIF Images -->
+<img src="TheresaGIF.gif" alt="THERESA GIF" title="OMG THERESA" style="width:150px;height:150px">
+
+<!-- Redirecting from images -->
+<a href="https://honkaiimpact3.gamepedia.com/Theresa_Apocalypse#VE"; target="_blank">
+<img src="https://goo.gl/5n68U1" alt="VIOLET EXECUTER" title="View Info on VE" style="width:150px;height:150px">
+</a>
+
+<!-- Animation as link -->
+<a href="https://honkaiimpact3.gamepedia.com/Raiden_Mei#SD"; target="_blank">
+<img src="MeiGIF.gif" alt="MEI GIF" title="<3 <3" style="width:150px;height:150px">
+</a>
+
+<!-- Defining a HTML table, tr = table row, th = table header, td = table description -->
+<!-- Caption is like the title of the table -->
+<caption> Jialat Gang </caption>
+<table>
+<tr>
+	<th>First names</th>
+	<th>Last names</th>
+	<th>Ages</th>
+	<!-- Colspan adds more child column under a table header -->
+	<th colspan="3">Profession</th>
+</tr>
+<tr>
+	<td>Winnie</td>
+	<td>Wong</td>
+	<td>26</td>
+	<td>Insurance</td>
+	<td>Zurich</td>
+	<td>Damansara</td>
+</tr>
+<tr>
+	<td>Kelvin</td>
+	<td>Loo</td>
+	<td>26</td>
+	<td>Programmer</td>
+	<td>Enidea</td>
+	<td>SS2</td>
+</tr>
+<tr>
+	<td>Wilson</td>
+	<td>Chan</td>
+	<td>26</td>
+	<td>Database</td>
+	<td>Unknown</td>
+	<td>Mahkota Cheras</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Adding a table, but with the headers as rows instead of columns -->
+<caption>Jialat Gang</caption>
+<table>
+<tr>
+	<th>First name</th>
+	<td>Winnie</td>
+	
+</tr>
+<tr>
+	<th rowspan="2">Profession</th>
+	<td>Insurance</td>
+</tr>
+<tr>
+	<td>Damansara</td>
+</tr>
+</table>
+
+<!-- Creating a block -->
+<div style="background:yellow">
+	<h1>Puchong</h1>
+	<p>The place im staying at</p>
+</div>
+<div style="background:blue;color:white">
+	<h1>Cheras</h1>
+	<p>The place IKEA is at</p>
+</div>
+
+<!-- Unordered lists, list-style-type changes the marker type -->
+<h1>Cat family</h1>
+<ul style="list-style-type:circle">
+	<li>Cat</li>
+	<li>Lion</li>
+	<li>Tiger</li>
+</ul>
+
+<!-- Ordered lists, type changes the marker type -->
+<h1> Horse family </h1>
+<ol type="i">
+	<li>Zebra</li>
+	<li>Giraffe</li>
+	<li>Pony</li>
+</ol>
+
+<!-- Nested lists -->
+<h1>Animal Family</h1>
+<ol>
+	<li>Cat family 2.0</li>
+		<ul>
+			<li>Cat</li>
+			<li>Lion</li>
+			<li>Tiger</li>
+		</ul>
+	<li>Zebra family 2.0</li>
+		<ul>
+			<li>Zebra</li>
+			<li>Giraffe</li>
+			<li>Pony</li>
+		</ul>
+</ol>
+
+<!-- Embedding Google Maps -->
+<div class="maps"><iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+
+<!-- Show time and date -->
+<button type="button" onclick="document.getElementById('test2').innerHTML = Date()">Press me</button>
+<p id="test2"></p>
+
+<!-- Log in form -->
+<form autocomplete="on">
+<!-- Fieldset adds in a box border -->
+<fieldset>
+<!-- Legend adds in title to form -->
+<legend>Registeration form</legend>
+	Birthday: <br>
+	<input type="date" name="birth">
+	<br>
+	Fav Color: <br>
+	<input type="color" name="favcolor">
+	<br>
+	Random Range: <br>
+	<input type="range" name="range">
+	<br>
+	First name: <br>
+	<input type="text" name="firstname" value="" maxlength="10">
+	<br>
+	Last name: <br>
+	<input type="text" name="lastname" value="Selvamoorthy" readonly disabled>
+	<br>
+	<input type="radio" name="Single" value="Single">Single<br>
+	<input type="radio" name="Relationship" value="Relationship">Relationship<br>
+	<input type="radio" name="Married" value="Married">Married<br>
+	Favourite Animal: <br>
+	<select name="Pets">
+		<option value="cat">Cat</option>
+		<option value="dog">Dog</option>
+		<option value="parrot">Parrot</option>
+	</select>
+	<br>
+	Password: <br>
+	<input type="password" name="password">
+	<br>
+	<br>
+	<input type="submit" value="Submit">
+	<br>
+	<br>
+	<br>
+	<input type="month" name="month">
+	<br>
+	<input type="week" name="week">
+	<br>
+	<input type="time" name="time">
+	<br>
+	<button type="button" onclick="alert('Hello Udemy')">Press me!</button>
+	<br>
+	Choose file from computer: <br>
+	<input type="file" name="file">
+</fieldset>
+</form>
+
+</body>
+</html>
