@@ -1,0 +1,21 @@
+h1 {
+    color: rgba(0,200,100,0.8);
+    border-color: purple;
+    border-width: 5px;
+    border-style: dashed;
+    
+    border: 5px dashed black;
+}
+
+h4 {
+    background: rgb(255,100,80);
+}
+
+body {
+/*
+    background: url(https://kravetdotcom.imgix.net/catalog/product/cache/image/700x700/beff4985b56e3afdbeabfc89641a4582/1/0/107_10045_CS.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+*/
+    background: pink;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inputs Demo</title>
+    </head>
+    <body>
+        <p>Do you prefer cats or dogs?</p>
+        <form action="">
+<!--            Labels use input ID to match-->
+            <label for="dogs">Dogs: </label>
+<!--            Radio inputs with similar names forces user to choose one-->
+<!--            Value will dictate what would be sent to server and can be seen on URL-->
+            <input type="radio" id="dogs" name="petChoice" value="dog">
+            <label for="cats">Cats: </label>
+            <input type="radio" id="cats" name="petChoice" value="cat">
+            
+            <p>What's your current mood?</p>
+            <select name="mood" id="">
+                <option value="sad">:(</option>
+                <option value="neautral">:|</option>
+                <option value="happy">:)</option>
+            </select>
+            <textarea name="paragraph" id="" cols="30" rows="10"></textarea>
+            <button>Go!</button>
+        </form>
+    </body>
+</html>
