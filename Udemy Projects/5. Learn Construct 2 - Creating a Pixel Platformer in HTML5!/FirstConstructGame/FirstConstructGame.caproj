@@ -22,7 +22,11 @@
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -85,10 +89,47 @@
             <texture original-source="C:\Users\Jivvanraj\Downloads\UDEMY Collections\Game Development\Learn Construct 2 Creating a Pixel Platformer in HTML5!\2. Game Setup\1.1 Assets\Assets\sheet_9.png" />
             <tiles />
         </object-type>
-        <object-type name="Sprite" sid="649247961402694">
+        <object-type name="obj_Player" sid="649247961402694">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="player_Dir" sid="510436085347737" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="642249087296896">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="437663931830337">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
-                <animation framecount="4" loop="0" name="ID_WALK" pingpong="0" repeatcount="1" repeatto="0" sid="232802294461720" speed="5">
+                <animation framecount="3" loop="0" name="ID_IDLE" pingpong="0" repeatcount="1" repeatto="0" sid="232802294461720" speed="5">
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0839844" />
+                            <point x="1" y="0.0826823" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="0" name="ID_LEFT" pingpong="0" repeatcount="1" repeatto="0" sid="223713683101735" speed="5">
                     <frame duration="1" hotspotX="0.529412" hotspotY="1">
                         <collision-poly>
                             <point x="0" y="0.0410156" />
@@ -122,15 +163,99 @@
                         </collision-poly>
                     </frame>
                 </animation>
+                <animation framecount="4" loop="0" name="ID_RIGHT" pingpong="0" repeatcount="1" repeatto="0" sid="513249425232492" speed="5">
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.526316" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="ID_JUMP" pingpong="0" repeatcount="1" repeatto="0" sid="701986818781013" speed="5">
+                    <frame duration="1" hotspotX="0.526316" hotspotY="1" original-source="C:\Users\Jivvanraj\Downloads\UDEMY Collections\Game Development\Learn Construct 2 Creating a Pixel Platformer in HTML5!\2. Game Setup\1.1 Assets\Assets\characters_7.png">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="ID_FALL" pingpong="0" repeatcount="1" repeatto="0" sid="783003048444648" speed="5">
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1" original-source="C:\Users\Jivvanraj\Downloads\UDEMY Collections\Game Development\Learn Construct 2 Creating a Pixel Platformer in HTML5!\2. Game Setup\1.1 Assets\Assets\characters_7.png">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0410156" />
+                            <point x="1" y="0.0410156" />
+                            <point x="1" y="0.958333" />
+                            <point x="0" y="0.958984" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_Collision" sid="643800859088970">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="625720057165732">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="834949655256916" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
             </animation-folder>
         </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>LevelLayout.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>PlayerEvent.xml</event-sheet>
+        <event-sheet>LevelEvent.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />
