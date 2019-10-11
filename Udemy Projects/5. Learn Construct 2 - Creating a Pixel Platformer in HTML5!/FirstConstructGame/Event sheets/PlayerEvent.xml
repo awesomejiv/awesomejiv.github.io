@@ -3,6 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>PlayerEvent</name>
     <events>
+        <variable constant="0" name="punch_Type" sid="304804451391835" static="0" type="number">0</variable>
+        <variable constant="0" name="rate_Punches" sid="266931465822908" static="0" type="number">0.1</variable>
+        <variable constant="0" name="can_Shoot" sid="794876987929267" static="0" type="number">0</variable>
+        <variable constant="0" name="num_Punches" sid="449579350921145" static="0" type="number">15</variable>
         <variable constant="0" name="anim_Speed" sid="636336076791757" static="0" type="number">10</variable>
         <event-block sid="833314959169215">
             <conditions>
@@ -18,143 +22,268 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="956289483830917">
-            <conditions>
-                <condition id="2" name="Key is down" sid="440365212779557" type="Keyboard">
-                    <param id="0" name="Key">68</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="116798855309186" type="obj_Player">
-                    <param id="0" name="Control">1</param>
-                </action>
-                <action id="-10" name="Set value" sid="822945179917750" type="obj_Player">
-                    <param id="0" name="Instance variable">player_Dir</param>
-                    <param id="1" name="Value">&quot;RIGHT&quot;</param>
-                </action>
-                <action id="4" name="Set animation" sid="930429349059676" type="obj_Player">
-                    <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="307333720624255" type="obj_Player">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="976458452609949">
-            <conditions>
-                <condition id="2" name="Key is down" sid="128901649281823" type="Keyboard">
-                    <param id="0" name="Key">65</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="921333086092378" type="obj_Player">
-                    <param id="0" name="Control">0</param>
-                </action>
-                <action id="-10" name="Set value" sid="241452846736156" type="obj_Player">
-                    <param id="0" name="Instance variable">player_Dir</param>
-                    <param id="1" name="Value">&quot;LEFT&quot;</param>
-                </action>
-                <action id="4" name="Set animation" sid="900318432702650" type="obj_Player">
-                    <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="520225594897391" type="obj_Player">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="140192861552921">
-            <conditions>
-                <condition id="2" name="Key is down" sid="471777130387097" type="Keyboard">
-                    <param id="0" name="Key">87</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="604017382276578" type="obj_Player">
-                    <param id="0" name="Control">2</param>
-                </action>
-                <action id="-10" name="Set value" sid="351693100393209" type="obj_Player">
-                    <param id="0" name="Instance variable">player_Dir</param>
-                    <param id="1" name="Value">&quot;JUMP&quot;</param>
-                </action>
-                <action id="6" name="Set speed" sid="918263253939154" type="obj_Player">
-                    <param id="0" name="Speed">5</param>
-                </action>
-                <action id="4" name="Set animation" sid="984679009454369" type="obj_Player">
-                    <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="286267244492402">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="716749165900360" type="obj_Player">
-                    <param id="0" name="Instance variable">player_Dir</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;IDLE&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="524163128974491" type="obj_Player">
-                    <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="6" name="Set speed" sid="473252607081812" type="obj_Player">
-                    <param id="0" name="Speed">5</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="967850114116932">
-            <conditions>
-                <condition behavior="Platform" id="4" name="Is falling" sid="908204359502860" type="obj_Player" />
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="380721116533404" type="obj_Player">
-                    <param id="0" name="Instance variable">player_Dir</param>
-                    <param id="1" name="Value">&quot;FALL&quot;</param>
-                </action>
-                <action id="6" name="Set speed" sid="317019473361390" type="obj_Player">
-                    <param id="0" name="Speed">5</param>
-                </action>
-                <action id="4" name="Set animation" sid="788052064473644" type="obj_Player">
-                    <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="341466143775167">
-            <conditions>
-                <condition id="2" name="Key is down" sid="195056855833723" type="Keyboard">
-                    <param id="0" name="Key">32</param>
-                </condition>
-            </conditions>
-            <actions />
+        <event-group description="" sid="382255165802069" title="Player Movement">
             <sub-events>
-                <event-block sid="424113853263399">
+                <event-block sid="956289483830917">
                     <conditions>
-                        <condition behavior="Platform" id="0" name="Is moving" sid="582607310099812" type="obj_Player" />
+                        <condition id="2" name="Key is down" sid="440365212779557" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Platform" id="1" name="Set max speed" sid="521747811624381" type="obj_Player">
-                            <param id="0" name="Max Speed">150</param>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="116798855309186" type="obj_Player">
+                            <param id="0" name="Control">1</param>
                         </action>
-                        <action id="6" name="Set speed" sid="433056445566762" type="obj_Player">
-                            <param id="0" name="Speed">15</param>
+                        <action id="-10" name="Set value" sid="822945179917750" type="obj_Player">
+                            <param id="0" name="Instance variable">player_Dir</param>
+                            <param id="1" name="Value">&quot;RIGHT&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="930429349059676" type="obj_Player">
+                            <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="307333720624255" type="obj_Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="976458452609949">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="128901649281823" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="921333086092378" type="obj_Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="241452846736156" type="obj_Player">
+                            <param id="0" name="Instance variable">player_Dir</param>
+                            <param id="1" name="Value">&quot;LEFT&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="900318432702650" type="obj_Player">
+                            <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="520225594897391" type="obj_Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="140192861552921">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="471777130387097" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="604017382276578" type="obj_Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="351693100393209" type="obj_Player">
+                            <param id="0" name="Instance variable">player_Dir</param>
+                            <param id="1" name="Value">&quot;JUMP&quot;</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="918263253939154" type="obj_Player">
+                            <param id="0" name="Speed">5</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="984679009454369" type="obj_Player">
+                            <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="286267244492402">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="716749165900360" type="obj_Player">
+                            <param id="0" name="Instance variable">player_Dir</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;IDLE&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="524163128974491" type="obj_Player">
+                            <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="473252607081812" type="obj_Player">
+                            <param id="0" name="Speed">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="967850114116932">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="908204359502860" type="obj_Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="380721116533404" type="obj_Player">
+                            <param id="0" name="Instance variable">player_Dir</param>
+                            <param id="1" name="Value">&quot;FALL&quot;</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="317019473361390" type="obj_Player">
+                            <param id="0" name="Speed">5</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="788052064473644" type="obj_Player">
+                            <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="341466143775167">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="195056855833723" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="424113853263399">
+                            <conditions>
+                                <condition behavior="Platform" id="0" name="Is moving" sid="582607310099812" type="obj_Player" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="521747811624381" type="obj_Player">
+                                    <param id="0" name="Max Speed">150</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="433056445566762" type="obj_Player">
+                                    <param id="0" name="Speed">15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="425354901653802">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="776221565569129" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="923827348940017" type="obj_Player">
+                            <param id="0" name="Max Speed">75</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="425354901653802">
-            <conditions>
-                <condition id="-22" name="Else" sid="776221565569129" type="System" />
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="1" name="Set max speed" sid="923827348940017" type="obj_Player">
-                    <param id="0" name="Max Speed">75</param>
-                </action>
-            </actions>
-        </event-block>
+        </event-group>
+        <event-group description="" sid="957191475333065" title="Player Punch">
+            <sub-events>
+                <event-block sid="174537759620564">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="913970762755950" type="System">
+                            <param id="0" name="Variable">num_Punches</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="469374693990072">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="536997028265147" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="437992421179955" type="obj_Player">
+                                    <param id="0" name="Instance variable">player_Dir</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;IDLE&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="471669569078470" type="obj_Player">
+                                    <param id="0" name="Instance variable">player_Dir</param>
+                                    <param id="1" name="Value">&quot;FALL&quot;</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="133171811514814" type="obj_Player">
+                                    <param id="0" name="Animation">&quot;ID_&quot; &amp; obj_Player.player_Dir</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="471693443758253">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="183984420312435" type="System">
+                                            <param id="0" name="Variable">can_Shoot</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="326432621996742" type="Function">
+                                            <param id="0" name="Name">&quot;punchTimer&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="170898304393637" type="Function">
+                                            <param id="0" name="Name">&quot;punchEffect&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="585516270261707" type="System">
+                                            <param id="0" name="Variable">can_Shoot</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="673591012227514">
+                    <conditions>
+                        <condition id="0" name="On function" sid="320644263380713" type="Function">
+                            <param id="0" name="Name">&quot;punchTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="204618710400651" type="System">
+                            <param id="0" name="Variable">num_Punches</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="347805364281928" type="System">
+                            <param id="0" name="Seconds">rate_Punches</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="442014017894983" type="System">
+                            <param id="0" name="Variable">can_Shoot</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="608766152579057">
+                    <conditions>
+                        <condition id="0" name="On function" sid="281322816195677" type="Function">
+                            <param id="0" name="Name">&quot;punchEffect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="312954802015596">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="432460194142981" type="System">
+                                    <param id="0" name="Variable">punch_Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="571546550039219" type="obj_Player">
+                                    <param id="0" name="Object">spr_Slash</param>
+                                    <param id="1" name="Layer">&quot;Entities&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="614049208635218">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="374075755663637" type="obj_Player" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Set angle" sid="191162518406018" type="spr_Slash">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

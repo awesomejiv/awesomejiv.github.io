@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -23,6 +24,7 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -233,6 +235,53 @@
                         </collision-poly>
                     </frame>
                 </animation>
+                <animation framecount="3" loop="0" name="ID_PUNCH" pingpong="0" repeatcount="1" repeatto="0" sid="778723225030236" speed="5">
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1" original-source="C:\Users\Jivvanraj\Downloads\UDEMY Collections\Game Development\Learn Construct 2 Creating a Pixel Platformer in HTML5!\2. Game Setup\1.1 Assets\Assets\characters_7.png">
+                        <collision-poly>
+                            <point x="0" y="0.0364583" />
+                            <point x="1" y="0.0364583" />
+                            <point x="1" y="0.960937" />
+                            <point x="0.474265" y="0.960938" />
+                            <point x="0" y="0.960937" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0364583" />
+                            <point x="1" y="0.0364583" />
+                            <point x="1" y="0.960937" />
+                            <point x="0.474265" y="0.960938" />
+                            <point x="0" y="0.960937" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0364583" />
+                            <point x="1" y="0.0364583" />
+                            <point x="1" y="0.960937" />
+                            <point x="0.474265" y="0.960938" />
+                            <point x="0" y="0.960937" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="ID_HIT" pingpong="0" repeatcount="1" repeatto="0" sid="580888249097057" speed="5">
+                    <frame duration="1" hotspotX="0.526316" hotspotY="1" original-source="C:\Users\Jivvanraj\Downloads\UDEMY Collections\Game Development\Learn Construct 2 Creating a Pixel Platformer in HTML5!\2. Game Setup\1.1 Assets\Assets\characters_7.png">
+                        <collision-poly>
+                            <point x="0" y="0.0364583" />
+                            <point x="1" y="0.0364583" />
+                            <point x="1" y="0.955729" />
+                            <point x="0" y="0.955729" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.529412" hotspotY="1">
+                        <collision-poly>
+                            <point x="0" y="0.0364583" />
+                            <point x="1" y="0.0364583" />
+                            <point x="1" y="0.955729" />
+                            <point x="0" y="0.955729" />
+                        </collision-poly>
+                    </frame>
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="obj_Collision" sid="643800859088970">
@@ -247,6 +296,32 @@
                     <frame duration="1" hotspotX="0" hotspotY="0" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="spr_Slash" sid="181946761149198">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="100994763990251">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="866366524429106" speed="5">
+                    <frame duration="1" hotspotX="4.08333" hotspotY="1.25" original-source="C:\Users\Jivvanraj\Downloads\UDEMY Collections\Game Development\Learn Construct 2 Creating a Pixel Platformer in HTML5!\2. Game Setup\1.1 Assets\Assets\swoosh_0.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0.75" y="0.583333" />
+                            <point x="1" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="1.625" hotspotY="0.46875" />
+                    <frame duration="1" hotspotX="1.09091" hotspotY="0.46875" />
+                    <frame duration="1" hotspotX="0.266667" hotspotY="0.227273" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="311034703896325">
+            <plugin id="Function" />
         </object-type>
     </object-folder>
     <families />
@@ -286,6 +361,7 @@
             </properties>
         </global-instance>
         <global-instance type="Browser" uid="7" />
+        <global-instance type="Function" uid="18" />
     </global-instances>
     <sounds-folder />
     <music-folder />
